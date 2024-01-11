@@ -1,0 +1,9 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+	.player-place {
+		@apply aspect-square w-[8.7vw] md:w-16 flex items-center justify-center;
+	}
+}
