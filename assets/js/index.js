@@ -118,7 +118,8 @@ class Game {
 				colors: this.playersColors[idx],
 				rounds: this.playerRounds,
 				round: 0,
-				categories: this.categories
+				categories: this.categories,
+				isCrowded: false
 			}))
 		}
 	}
