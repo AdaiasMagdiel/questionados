@@ -137,5 +137,8 @@ game.drawPlayers()
 
 console.log(game)
 
-game.players[1].setRound(3)
-game.drawPlayers()
+function movePlayer() {
+	const round = game.players[1].getRound()
+	game.players[1].setRound(round+1)
+	game.drawPlayers()
+}
