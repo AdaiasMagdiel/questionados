@@ -119,7 +119,7 @@ class Game {
 				rounds: this.playerRounds,
 				round: 0,
 				categories: this.categories,
-				isCrowded: false
+				isCrowned: false
 			}))
 		}
 	}
