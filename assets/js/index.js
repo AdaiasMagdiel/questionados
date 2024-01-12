@@ -1,32 +1,3 @@
-// <div class="player__1 flex gap-2">
-// 	<div class="round flex">
-// 		<div class="bg-yellow-50 text-xl player-place">&#9823;</div>
-// 		<div class="bg-yellow-100 text-xl player-place">2</div>
-// 		<div class="bg-yellow-200 text-xl player-place">3</div>
-// 		<div class="bg-yellow-300 text-xl player-place">4</div>
-// 	</div>
-// 	<div class="categories flex border-2 border-yellow-400">
-// 		<div class="bg-yellow-50 player-place">A</div>
-// 		<div class="bg-yellow-50 player-place">B</div>
-// 		<div class="bg-yellow-50 player-place">C</div>
-// 		<div class="bg-yellow-50 player-place">D</div>
-// 		<div class="bg-yellow-50 player-place">E</div>
-// 		<div class="bg-yellow-50 player-place">F</div>
-// 	</div>
-// </div>
-
-// GAME STATE STATE
-// {
-//     rounds: <int>,
-//     players: <array playerState>,
-// }
-
-// PLAYER STATE
-// {
-//     rounds: <int>,
-//     round: <int 0..[gameState.rounds-1]>,
-// }
-
 class Elements {
 	static clear(element) {
 		element.innerHTML = ''
@@ -70,7 +41,7 @@ class Player {
 			if (idx === this.state.rounds-1 && this.state.round === idx) text = '👑'
 
 			const div = Elements.div(Elements.text(text))
-			div.classList.add(this.state.colors[idx], 'text-xl', 'player-place')
+			div.classList.add(this.state.colors[idx], 'md:text-xl', 'player-place')
 
 			return div
 		})
@@ -136,10 +107,3 @@ class Game {
 const game = new Game()
 game.drawPlayers()
 
-console.log(game)
-
-function movePlayer() {
-	const round = game.players[1].getRound()
-	game.players[1].setRound(round+1)
-	game.drawPlayers()
-}
