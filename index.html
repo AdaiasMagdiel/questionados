@@ -5,25 +5,25 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<title>Questionados</title>
 		<link rel="stylesheet" href="assets/css/style.min.css">
+		<script src="assets/data/art.js"></script>
+		<script src="assets/data/geography.js"></script>
+		<script src="assets/data/history.js"></script>
+		<script src="assets/data/pop.js"></script>
+		<script src="assets/data/science.js"></script>
+		<script src="assets/data/sports.js"></script>
+		<script src="assets/js/element.js"></script>
+		<script src="assets/js/player.js"></script>
+		<script src="assets/js/wheel.js"></script>
 		<script defer src="assets/js/index.js"></script>
-		<script defer src="assets/js/wheel.js"></script>
 	</head>
 	<body>
 		<main class="w-full min-h-screen flex flex-col items-center md:flex-row md:justify-center p-4 gap-4">
 			<!-- PLAYERS -->
 			<div class="players flex flex-col gap-2"></div>
-			<div class="relative w-full md:w-96 aspect-square">
-				<div class="wheel w-full aspect-square relative overflow-hidden rounded-full border-4 border-stone-300">
-					<div class="slot">A</div>
-					<div class="slot">B</div>
-					<div class="slot">C</div>
-					<div class="slot">D</div>
-					<div class="slot">E</div>
-					<div class="slot">F</div>
-				</div>
-				<div class="pin w-2 h-8 bg-black absolute left-2/4 top-0" style="clip-path: polygon(100% 0, 0 0, 0% 100%);">
-				</div>
-			</div>
+			<!-- WHEEL -->
+			<div class="wheel__box relative w-full md:w-96 aspect-square"></div>
+			<!-- QUESTION -->
+			<div class="fixed bg-black/20 w-screen h-screen top-0"></div>
 		</main>
 	</body>
 </html>

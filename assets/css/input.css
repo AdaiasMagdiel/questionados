@@ -19,34 +19,4 @@
 		clip-path: polygon(100% 0, 0 0, 50% 100%);
 		left: 20%;
 	}
-
-	.slot:nth-child(1) {
-		@apply bg-yellow-200;
-		rotate: calc(360deg / 6 * 0);
-	}
-
-	.slot:nth-child(2) {
-		@apply bg-orange-200;
-		rotate: calc(360deg / 6 * 1);
-	}
-
-	.slot:nth-child(3) {
-		@apply bg-red-400;
-		rotate: calc(360deg / 6 * 2);
-	}
-
-	.slot:nth-child(4) {
-		@apply bg-pink-300;
-		rotate: calc(360deg / 6 * 3);
-	}
-
-	.slot:nth-child(5) {
-		@apply bg-blue-400;
-		rotate: calc(360deg / 6 * 4);
-	}
-
-	.slot:nth-child(6) {
-		@apply bg-green-400;
-		rotate: calc(360deg / 6 * 5);
-	}
 }
