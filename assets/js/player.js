@@ -15,7 +15,7 @@ class Player {
 		return this.state.round
 	}
 	
-	draw(container) {
+	draw(container, playerIdx, border) {
 		const rounds = Array(this.state.rounds).fill(0).map((_, idx) => {
 			let text = this.state.round === idx ? '♟️' : ''
 			if (idx === this.state.rounds-1 && this.state.round === idx) text = '👑'
@@ -28,10 +28,20 @@ class Player {
 		const round = Elements.div(rounds)
 		round.classList.add('round', 'flex')
 
-		const categories = Array(this.state.categories.length).fill(0).map((_, idx) => {
-			const div = Elements.div(Elements.text(this.state.categories[idx]))
+		if (playerIdx) round.classList.add('border-2', border)
+
+		const categories = Array(this.state.categories.length-1).fill(0).map((_, idx) => {
+			const category = this.state.categories[idx]
+
+			const div = Elements.div()
 			div.classList.add(this.state.colors[0], 'player-place')
 
+			const badge = Elements.div()
+			badge.classList.add('rounded-full', 'w-[50%]', 'aspect-square', 'border-2', category.border)
+
+			if (this.state.hasCategories.includes(category.name)) badge.classList.add(category.color)
+
+			div.appendChild(badge)
 			return div
 		})
 		const category = Elements.div(categories)

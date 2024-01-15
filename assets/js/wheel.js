@@ -1,11 +1,11 @@
 const wheel = document.querySelector('.wheel')
 
 class Wheel {
-  constructor(colors, titles) {
-    this.colors = colors
-    this.numSlots = this.colors.length
-    this.titles = titles
+  constructor(categories, callback) {
+    this.categories = categories
+    this.numSlots = this.categories.length
     this.isSpining = false
+    this.callback = callback
   }
 
   static getContainer() {
@@ -31,37 +31,55 @@ class Wheel {
     if (index === -1) index = 0
     this.isSpining = false
 
-    console.log('ABCDEF'[index]);
+    console.log(this.categories[index].name);
+    this.callback(index)
+  }
+
+  getRandomDeg(){
+    return Math.floor(Math.random() * 360)
   }
 
   spinWheel(e, angle) {
     if (this.isSpining) return
 
+    const target = e !== undefined
+      ? e.currentTarget
+      : document.querySelector('.slots__box')
+
     this.isSpining = true
-    const randomAngle = angle === undefined ? 360 * 30 + Math.floor(Math.random() * 360) : angle;
+    const randomAngle = angle === undefined
+      ? (360 * 30 + this.getRandomDeg() + this.getRandomDeg() + this.getRandomDeg())
+      : angle;
     const duration = angle === undefined ? 5 : 1
 
-    e.currentTarget.style.transition = 'none';
-    e.currentTarget.style.transform = 'rotate(0deg)';
+    target.style.transition = 'none';
+    target.style.transform = 'rotate(0deg)';
 
-    e.currentTarget.offsetHeight;
+    target.offsetHeight;
 
-    e.currentTarget.style.transition = `transform ${duration}s cubic-bezier(0,1,1,.99)`;
-    e.currentTarget.style.transform = `rotate(${360-randomAngle}deg)`;
+    target.style.transition = `transform ${duration}s cubic-bezier(0,1,1,.99)`;
+    target.style.transform = `rotate(${360-randomAngle}deg)`;
 
     setTimeout(() => this.verifyEndSlot(randomAngle), duration * 1000 + 10)
   }
 
   draw(container) {
-    const slots = Array(this.numSlots).fill(0).map((_, idx) => {
-      const slot = Elements.div(Elements.text(this.titles[idx]))
-      slot.classList.add('slot', this.colors[idx])
+    const slots = this.categories.map((category, idx) => {
+      const text = Elements.p(category.name)
+      if (category.name === '👑') text.classList.add('text-4xl')
+      else {
+        text.innerHTML = category.name.split('').join('<br>')
+        text.style.lineHeight = '1rem'
+      }
+      const slot = Elements.div(text)
+
+      slot.classList.add('slot', category.color)
       slot.style.rotate = `${360 / this.numSlots * idx}deg`
 
       return slot
     })
     const slotsBox = Elements.div(slots)
-    slotsBox.classList.add("w-full", "aspect-square", "relative", "overflow-hidden", "rounded-full", "border-4", "border-stone-300")
+    slotsBox.classList.add('slots__box', "w-full", "aspect-square", "relative", "overflow-hidden", "rounded-full", "border-4", "border-stone-300")
     slotsBox.addEventListener('click', this.spinWheel.bind(this))
 
     const needle = Elements.div()
