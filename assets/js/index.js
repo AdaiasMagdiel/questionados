@@ -76,7 +76,7 @@ class Game {
 			this.players.push(new Player({
 				colors: this.playersColors[idx],
 				rounds: this.playerRounds,
-				round: 3,
+				round: 0,
 				categories: this.categories,
 				isCrowned: false,
 				hasCategories: [],
