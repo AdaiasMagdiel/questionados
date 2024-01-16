@@ -3,85 +3,75 @@
 	<head>
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 		<title>Questionados</title>
-
 		<meta name="author" content="Adaías Magdiel">
-		<meta name="description" content="Um divertido jogo de trivia para até 6 jogadores. Gire a roleta, responda trivias e preencha seu quadro de medalhas!">
-
+		<meta name="description"
+		content="Um divertido jogo de trivia para até 6 jogadores. Gire a roleta, responda trivias e preencha seu quadro de medalhas!">
 		<!-- Metatags para OpenGraph -->
-	    <meta property="og:title" content="Questionados">
-	    <meta property="og:description" content="Um divertido jogo de trivia para até 6 jogadores. Gire a roleta, responda trivias e preencha seu quadro de medalhas!">
-	    <meta property="og:type" content="website">
-	    <meta property="og:url" content="https://questionados.adaiasmagdiel.com/">
-	    <meta property="og:image" content="/assets/img/ogimage.webp">
-
-	    <!-- Metatags para Twitter Cards -->
-	    <meta name="twitter:card" content="summary_large_image">
-	    <meta name="twitter:site" content="@m_gd__l">
-	    <meta name="twitter:title" content="Questionados">
-	    <meta name="twitter:description" content="Um divertido jogo de trivia para até 6 jogadores. Gire a roleta, responda trivias e preencha seu quadro de medalhas!">
-	    <meta name="twitter:image" content="/assets/img/ogimage.webp">
-
-	    <link rel="icon" href="/assets/img/favicon.ico" type="image/x-icon">
-    	<link rel="shortcut icon" href="/assets/img/favicon.ico" type="image/x-icon">
-
+		<meta property="og:title" content="Questionados">
+		<meta property="og:description"
+		content="Um divertido jogo de trivia para até 6 jogadores. Gire a roleta, responda trivias e preencha seu quadro de medalhas!">
+		<meta property="og:type" content="website">
+		<meta property="og:url" content="https://questionados.adaiasmagdiel.com/">
+		<meta property="og:image" content="/assets/img/ogimage.webp">
+		<!-- Metatags para Twitter Cards -->
+		<meta name="twitter:card" content="summary_large_image">
+		<meta name="twitter:site" content="@m_gd__l">
+		<meta name="twitter:title" content="Questionados">
+		<meta name="twitter:description"
+		content="Um divertido jogo de trivia para até 6 jogadores. Gire a roleta, responda trivias e preencha seu quadro de medalhas!">
+		<meta name="twitter:image" content="/assets/img/ogimage.webp">
+		<link rel="icon" href="/assets/img/favicon.ico" type="image/x-icon">
+		<link rel="shortcut icon" href="/assets/img/favicon.ico" type="image/x-icon">
 		<link rel="preconnect" href="https://fonts.googleapis.com">
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 		<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&display=swap" rel="stylesheet">
-
 		<link rel="stylesheet" href="assets/css/style.min.css">
-
 		<script src="assets/data/art.js"></script>
 		<script src="assets/data/geography.js"></script>
 		<script src="assets/data/history.js"></script>
 		<script src="assets/data/pop.js"></script>
 		<script src="assets/data/science.js"></script>
 		<script src="assets/data/sports.js"></script>
-
 		<script src="assets/js/element.js"></script>
 		<script src="assets/js/player.js"></script>
 		<script src="assets/js/wheel.js"></script>
 		<script src="assets/js/card.js"></script>
-
 		<script defer src="assets/js/index.js"></script>
 	</head>
 	<body>
-		<main class="bg-main w-full min-h-screen flex flex-col items-center md:flex-row md:justify-center p-4 gap-4 overflow-y-hidden overflow-x-scroll">
+		<main
+			class="bg-main w-full min-h-screen flex flex-col items-center md:flex-row md:justify-center p-4 gap-4 overflow-x-hidden overflow-y-scroll">
 			<!-- PLAYERS -->
 			<div class="players flex flex-col gap-2"></div>
-
 			<!-- WHEEL -->
 			<div class="wheel__box relative w-full md:w-96 aspect-square"></div>
-
 			<!-- QUESTION -->
 			<div class="question__modal fixed bg-black/40 w-screen h-screen top-0 items-center justify-center">
 				<div class="question__card w-80% max-w-sm rounded-md flex-grow aspect-[3/4]">
 					<div class="question__card-inner w-full h-full relative">
-
 						<div class="question__card-back w-full h-full rounded-md absolute p-4">
 							<div class="border-2 border-black rounded-md h-full w-full flex justify-center items-center">
 								<p class="text-muted text-xl uppercase font-semibold info">Clique para revelar</p>
 							</div>
 						</div>
-
 						<div class="bg-white p-4 w-full h-full rounded-md">
 							<div class="question__card-front border-2 border-black rounded-md p-4 w-full h-full">
 								<h1 class="card__question font-semibold text-md text-justify uppercase"></h1>
-
 								<div class="card__choicesbox mt-8 flex flex-col gap-4">
 									<button class="border rounded-md px-4 py-2 text-left active:scale-[.98]"></button>
-								    <button class="border rounded-md px-4 py-2 text-left active:scale-[.98]"></button>
-								    <button class="border rounded-md px-4 py-2 text-left active:scale-[.98]"></button>
-								    <button class="border rounded-md px-4 py-2 text-left active:scale-[.98]"></button>
+									<button class="border rounded-md px-4 py-2 text-left active:scale-[.98]"></button>
+									<button class="border rounded-md px-4 py-2 text-left active:scale-[.98]"></button>
+									<button class="border rounded-md px-4 py-2 text-left active:scale-[.98]"></button>
 								</div>
-
 								<p class="card__infobox text-center uppercase font-semibold my-4 text-2xl"></p>
-
 								<div class="card__triggerbox flex gap-4 justify-center items-center">
-									<button class="card__trigger-bomb border-inside aspect-[3/4] w-[20%] shadow-lg rounded-md bg-purple-200 uppercase font-semibold [&:not(:disabled)]:active:scale-[.98] disabled:bg-stone-200 text-xs">Bomba</button>
-									<button class="card__trigger-pass border-inside aspect-[3/4] w-[20%] shadow-lg rounded-md bg-purple-200 uppercase font-semibold [&:not(:disabled)]:active:scale-[.98] disabled:bg-stone-200 text-xs">Passar</button>
-									<button class="card__trigger-spin border-inside aspect-[3/4] w-[20%] shadow-lg rounded-md bg-purple-200 uppercase font-semibold [&:not(:disabled)]:active:scale-[.98] disabled:bg-stone-200 text-xs">Girar</button>
+									<button
+									class="card__trigger-bomb border-inside aspect-[3/4] w-[20%] shadow-lg rounded-md bg-purple-200 uppercase font-semibold [&:not(:disabled)]:active:scale-[.98] disabled:bg-stone-200 text-xs">Bomba</button>
+									<button
+									class="card__trigger-pass border-inside aspect-[3/4] w-[20%] shadow-lg rounded-md bg-purple-200 uppercase font-semibold [&:not(:disabled)]:active:scale-[.98] disabled:bg-stone-200 text-xs">Passar</button>
+									<button
+									class="card__trigger-spin border-inside aspect-[3/4] w-[20%] shadow-lg rounded-md bg-purple-200 uppercase font-semibold [&:not(:disabled)]:active:scale-[.98] disabled:bg-stone-200 text-xs">Girar</button>
 								</div>
 							</div>
 						</div>
