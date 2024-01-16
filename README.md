@@ -18,7 +18,7 @@ Welcome to Questionados, an exciting trivia game where up to 6 players can engag
 
 ### Prerequisites
 
-To run the game, you only need a web browser. To develop the game, ensure you have Tailwind CSS installed.
+To run the game, you only need a web browser. To play online, visit (Questionados - Online Version)[https://questionados.adaiasmagdiel.com]. To develop the game, ensure you have Tailwind CSS installed.
 
 ### Running the Game
 
