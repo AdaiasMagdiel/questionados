@@ -1,10 +1,10 @@
 # .github/workflows/deploy.yml
 name: Deploy to deta space
 
-on: 
-  push:
-    branches:
-    - main
+# Deta Space was discontinued; kept as a historical record and disabled
+# (manual trigger only) so it doesn't fail automatically.
+on:
+  workflow_dispatch:
 
 jobs:
   deploy:
