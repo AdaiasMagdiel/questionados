@@ -13,22 +13,14 @@ class Wheel {
   }
 
   verifyEndSlot(angle) {
-    const normalizedAngle = (angle % 360);
+    const normalizedAngle = (angle % 360 + 360) % 360;
     const slotSize = 360 / this.numSlots;
-    const startOffset = 360 - (slotSize / 2);
-    let index = -1;
 
-    for (let i = 0; i < this.numSlots; i++) {
-        const startAngle = (i * slotSize + startOffset) % 360;
-        const endAngle = ((i + 1) * slotSize + startOffset) % 360;
+    // Each slot is centered on `i * slotSize`, so shifting by half a slot
+    // before dividing avoids dealing with the wraparound at 360/0 degrees.
+    const shiftedAngle = (normalizedAngle + slotSize / 2) % 360;
+    const index = Math.floor(shiftedAngle / slotSize) % this.numSlots;
 
-        if (normalizedAngle >= startAngle && normalizedAngle < endAngle) {
-            index = i;
-            break;
-        }
-    }
-
-    if (index === -1) index = 0
     this.isSpining = false
 
     console.log(this.categories[index].name);
